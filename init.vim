@@ -11,17 +11,17 @@ set cursorline
 set virtualedit=onemore
 set smartindent
 set visualbell
-set statusline=2
-set showtabline=2
+set statusline=3
+set showtabline=3
 set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
 
 filetype indent on
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=3
+set softtabstop=3
+set shiftwidth=3
 
 set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,]
@@ -40,6 +40,8 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 set background=dark
 set t_Co=256
 set termguicolors
+
+set ttimeoutlen=10
 
 " dein
 let s:dein_dir = expand('~/.cache/dein')
@@ -67,16 +69,18 @@ if dein#check_install()
 endif
 
 " vim-airline
-let g:airline_theme='papercolor'
+let g:airline_theme='dark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 " Colorscheme
-colorscheme lucius
+"colorscheme lucius
+colorscheme molokai
 
 " NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+let g:NERDTreeShowHidden = 1
 
 " netrw
 "let g:netrw_liststyle=3
