@@ -11,17 +11,17 @@ set cursorline
 set virtualedit=onemore
 set smartindent
 set visualbell
-set statusline=3
-set showtabline=3
+set statusline=2
+set showtabline=2
 set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
 
 filetype indent on
 set expandtab
-set tabstop=3
-set softtabstop=3
-set shiftwidth=3
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,]
@@ -42,6 +42,14 @@ set t_Co=256
 set termguicolors
 
 set ttimeoutlen=10
+
+augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.h setlocal tabstop=8 softtabstop=8 shiftwidth=8
+    autocmd BufNewFile,BufRead *.c setlocal tabstop=8 softtabstop=8 shiftwidth=8
+    autocmd BufNewFile,BufRead *.cpp setlocal tabstop=8 softtabstop=8 shiftwidth=8
+augroup END
 
 " dein
 let s:dein_dir = expand('~/.cache/dein')
